@@ -33,10 +33,88 @@ else:
 
 
 # 3
-emails = []
-domains = []
+# emails = []
+# domains = []
+#
+# for i in range(5):
+#     emails.append(input())
+#     domains.append(emails[i][emails[i].index("@") + 1:])
+#
+# domain = "%10s %2d"
+# for domai in domains:
+#     print(domain % (domai, domains.count(domai)))
 
-for i in range(5):
-    emails.append(input())
-    domains.append()
 
+# 4a
+
+def isPrime(x):
+    for i in range(2, x):
+        if x % i == 0:
+            return False
+    return True
+
+
+def print_factor(x):
+    print("The factors of %d are:" % x)
+    for i in range(1, x + 1):
+        if x % i == 0:
+            print("%d " % i)
+
+
+list1 = [19, 3, 15, 43, 98, 16, 9, 23, 4]
+
+for i in list1:
+    if isPrime(i):
+        print("%d is prime" % i)
+    else:
+        print_factor(i)
+
+# 4b
+
+list2 = [19, 3, 15, 43, 98, 16, 9, 23, 4]
+list2.sort()
+print(list2)
+list2.sort(reverse=True)
+print(list2)
+
+# 4c
+
+list3 = [19, 3, 15, 43, 98, 16, 9, 23, 4]
+tuple1 = (list3[0], list3[1], list3[2])
+tuple2 = sorted(tuple1)
+for i in range(3):
+    list3[i] = tuple2[i]
+print(list3)
+
+# 5
+
+list4 = [12, 5, 8, 8, 23, 15, 7, 8, 9, 12, 34, 6, 9, 16, 8, 23, 12, 7, 5, 3]
+capacity = 100
+list4.sort(reverse=True)
+sum_elem = 0
+while sum_elem < capacity:
+    sum_elem += list4[0]
+    print(list4[0])
+    del list4[0]
+    if len(list4) == 0: break
+
+# 6
+
+name_everyone = []
+surname_everyone = []
+name_and_surname_everyone = []
+pwr_domain = "@pwr.edu.pl"
+
+for i in range(4):
+    name = input("Your name:")
+    surname = input("Your surname:")
+    name.lower()
+    surname.lower()
+    name_everyone.append(name)
+    surname_everyone.append(surname)
+    name_and_surname_everyone.append(name + " " + surname)
+    print(name + '.' + surname + pwr_domain)
+
+print(name_everyone)
+print(surname_everyone)
+print(name_and_surname_everyone)
