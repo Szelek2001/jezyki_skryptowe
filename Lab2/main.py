@@ -33,16 +33,20 @@ else:
 
 
 # 3
-# emails = []
-# domains = []
-#
-# for i in range(5):
-#     emails.append(input())
-#     domains.append(emails[i][emails[i].index("@") + 1:])
-#
-# domain = "%10s %2d"
-# for domai in domains:
-#     print(domain % (domai, domains.count(domai)))
+emails = []
+domains = []
+
+for i in range(5):
+    try:
+        emails.append(input())
+        domains.append(emails[i][emails[i].index("@") + 1:])
+    except ValueError as e:
+        print('You need to enter email')
+
+
+domain = "%10s %2d"
+for domai in domains:
+    print(domain % (domai, domains.count(domai)))
 
 
 # 4a
@@ -108,12 +112,10 @@ pwr_domain = "@pwr.edu.pl"
 for i in range(4):
     name = input("Your name:")
     surname = input("Your surname:")
-    name.lower()
-    surname.lower()
     name_everyone.append(name)
     surname_everyone.append(surname)
     name_and_surname_everyone.append(name + " " + surname)
-    print(name + '.' + surname + pwr_domain)
+    print(name.lower() + '.' + surname.lower() + pwr_domain)
 
 print(name_everyone)
 print(surname_everyone)
