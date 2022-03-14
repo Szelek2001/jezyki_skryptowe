@@ -138,22 +138,22 @@ day_to_end()
 
 
 # 7
-# import os
-# import time
-#
-# dir1 = input("Podaj katalog")
-# if os.path.isdir(dir1):
-#     file1 = input("Podaj plik")
-#     full_file = os.path.join(dir1, file1)
-#     if os.path.isfile(full_file):
-#         print(time.localtime(os.path.getmtime(full_file)))
-#         print(time.localtime(os.path.getctime(full_file)))
-#         print(time.localtime(os.path.getatime(full_file)))
-#         print(os.path.getsize(full_file))
-#     else:
-#         print("Nie ma takiego pliku")
-# else:
-#     print("Nie ma takiego katalogu")
+import os
+import time
+
+dir1 = input("Podaj katalog")
+if os.path.isdir(dir1):
+    file1 = input("Podaj plik")
+    full_file = os.path.join(dir1, file1)
+    if os.path.isfile(full_file):
+        print(time.localtime(os.path.getmtime(full_file)))
+        print(time.localtime(os.path.getctime(full_file)))
+        print(time.localtime(os.path.getatime(full_file)))
+        print(os.path.getsize(full_file))
+    else:
+        print("Nie ma takiego pliku")
+else:
+    print("Nie ma takiego katalogu")
 
 
 # 8
